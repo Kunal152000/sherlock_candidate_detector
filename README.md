@@ -90,13 +90,6 @@ Interactive API docs (Swagger UI) are auto-generated at
 ```bash
 streamlit run frontend/dashboard.py
 ```
-
-### Drive it with the simulator
-
-```bash
-python simulator/simulator.py
-```
-
 ---
 
 ## API
