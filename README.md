@@ -22,7 +22,7 @@ https://app.diagrams.net/#G1wxw_qEXdyZOYF3n1TLyO4iQHRX-FJDYw#%7B%22pageId%22%3A%
 
 ```mermaid
 flowchart TD
-    sim["Meeting Simulator (events.json)"] -->|"POST /events (batched)"| api["FastAPI Backend"]
+    sim["Googl meet data"] -->|"POST /events (batched)"| api["FastAPI Backend"]
     api --> buf["Event Buffer (in-memory)"]
     buf -->|"flush every 5s OR on join/leave"| state["Meeting State (in-memory)"]
     state --> sig["Signal Registry (pure functions)"]
