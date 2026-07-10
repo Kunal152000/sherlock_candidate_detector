@@ -1,0 +1,31 @@
+{
+  "name": "scenario2_wrong_name_typed",
+  "description": "The interviewer typed the wrong candidate name at scheduling time ('Sameer'), but the real candidate is 'Arjun Nair'. The name signal is therefore misleading/uninformative, so the correct pick must come from behaviour. A silent observer ('Conference Room') is present to confirm observers are demoted.",
+  "start": {
+    "meeting_id": "scenario2",
+    "candidate_name": "Sameer",
+    "interviewer_names": ["Meera Iyer"]
+  },
+  "events": [
+    {"type": "join", "participant_id": "p1", "display_name": "Meera Iyer"},
+    {"type": "join", "participant_id": "p2", "display_name": "Arjun Nair"},
+    {"type": "join", "participant_id": "p3", "display_name": "Conference Room"},
+    {"type": "camera", "participant_id": "p1", "camera_on": true},
+    {"type": "camera", "participant_id": "p2", "camera_on": true},
+    {"type": "transcript", "participant_id": "p1", "text": "Welcome! Shall we begin? Tell me about your background."},
+    {"type": "speaking", "participant_id": "p1", "duration_seconds": 8},
+    {"type": "transcript", "participant_id": "p2", "text": "Hi, I'm Arjun Nair, I've been working as a data engineer for four years."},
+    {"type": "speaking", "participant_id": "p2", "duration_seconds": 25},
+    {"type": "transcript", "participant_id": "p1", "text": "Can you describe a challenging bug you fixed?"},
+    {"type": "speaking", "participant_id": "p1", "duration_seconds": 6},
+    {"type": "transcript", "participant_id": "p2", "text": "Absolutely. We had a race condition in our pipeline that I traced and fixed."},
+    {"type": "speaking", "participant_id": "p2", "duration_seconds": 28},
+    {"type": "transcript", "participant_id": "p2", "text": "It taught me a lot about idempotency and safe retries."},
+    {"type": "speaking", "participant_id": "p2", "duration_seconds": 12}
+  ],
+  "expected": {
+    "candidate_id": "p2",
+    "min_confidence": 0.6,
+    "ambiguous": false
+  }
+}

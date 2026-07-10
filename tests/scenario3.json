@@ -1,0 +1,32 @@
+{
+  "name": "scenario3_multi_interviewer_observers",
+  "description": "A panel interview: two interviewers who both ask questions, one real candidate, and two silent observers (a note-taker and someone on a phone). The verdict must separate the candidate from multiple interviewers AND from silent observers at the same time.",
+  "start": {
+    "meeting_id": "scenario3",
+    "candidate_name": "Neha Gupta",
+    "interviewer_names": ["Sunita Rao", "Vikram Desai"]
+  },
+  "events": [
+    {"type": "join", "participant_id": "p1", "display_name": "Sunita Rao"},
+    {"type": "join", "participant_id": "p2", "display_name": "Vikram Desai"},
+    {"type": "join", "participant_id": "p3", "display_name": "Neha Gupta"},
+    {"type": "join", "participant_id": "p4", "display_name": "Note Taker"},
+    {"type": "join", "participant_id": "p5", "display_name": "iPhone"},
+    {"type": "camera", "participant_id": "p3", "camera_on": true},
+    {"type": "transcript", "participant_id": "p1", "text": "Hi Neha, thanks for joining. Can you introduce yourself?"},
+    {"type": "speaking", "participant_id": "p1", "duration_seconds": 7},
+    {"type": "transcript", "participant_id": "p3", "text": "Hi, my name is Neha Gupta and I'm a frontend developer."},
+    {"type": "speaking", "participant_id": "p3", "duration_seconds": 22},
+    {"type": "transcript", "participant_id": "p2", "text": "Great. Could you tell me about a project you're proud of?"},
+    {"type": "speaking", "participant_id": "p2", "duration_seconds": 6},
+    {"type": "transcript", "participant_id": "p3", "text": "Sure, I led the redesign of our checkout flow and improved conversion."},
+    {"type": "speaking", "participant_id": "p3", "duration_seconds": 26},
+    {"type": "transcript", "participant_id": "p3", "text": "I also mentored two junior engineers during that project."},
+    {"type": "speaking", "participant_id": "p3", "duration_seconds": 14}
+  ],
+  "expected": {
+    "candidate_id": "p3",
+    "min_confidence": 0.6,
+    "ambiguous": false
+  }
+}

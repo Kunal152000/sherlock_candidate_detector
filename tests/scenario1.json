@@ -1,0 +1,32 @@
+{
+  "name": "scenario1_device_name",
+  "description": "The candidate joins under a device-style display name ('MacBook Pro') instead of their real name. Identity from the display name is useless, so the verdict must lean on behaviour: a self-introduction with the expected name, answering (not asking) questions, and substantial speaking time.",
+  "start": {
+    "meeting_id": "scenario1",
+    "candidate_name": "Rahul Sharma",
+    "candidate_email": "rahul.sharma@example.com",
+    "interviewer_names": ["Alice Johnson"],
+    "interviewer_emails": ["alice.johnson@acme.com"]
+  },
+  "events": [
+    {"type": "join", "participant_id": "p1", "display_name": "Alice Johnson", "email": "alice.johnson@acme.com"},
+    {"type": "join", "participant_id": "p2", "display_name": "MacBook Pro"},
+    {"type": "camera", "participant_id": "p1", "camera_on": true},
+    {"type": "camera", "participant_id": "p2", "camera_on": true},
+    {"type": "transcript", "participant_id": "p1", "text": "Hi, thanks for joining. Can you tell me about yourself?"},
+    {"type": "speaking", "participant_id": "p1", "duration_seconds": 8},
+    {"type": "transcript", "participant_id": "p2", "text": "Hi, my name is Rahul Sharma, I'm a backend engineer."},
+    {"type": "speaking", "participant_id": "p2", "duration_seconds": 20},
+    {"type": "transcript", "participant_id": "p1", "text": "Great. Could you walk me through a recent project?"},
+    {"type": "speaking", "participant_id": "p1", "duration_seconds": 6},
+    {"type": "transcript", "participant_id": "p2", "text": "Sure. I built a real-time detection service using FastAPI and asyncio."},
+    {"type": "speaking", "participant_id": "p2", "duration_seconds": 30},
+    {"type": "transcript", "participant_id": "p2", "text": "I focused on fusing multiple weak signals so it stays robust under bad data."},
+    {"type": "speaking", "participant_id": "p2", "duration_seconds": 15}
+  ],
+  "expected": {
+    "candidate_id": "p2",
+    "min_confidence": 0.6,
+    "ambiguous": false
+  }
+}
