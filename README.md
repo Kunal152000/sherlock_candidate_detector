@@ -14,6 +14,10 @@ order, and a holistic LLM read — into one ranked, explainable verdict.
 
 ---
 
+## Simpler Overview of the flow
+![Sherlock candidate-detection flow](Sherlock.drawio.png)
+https://app.diagrams.net/#G1wxw_qEXdyZOYF3n1TLyO4iQHRX-FJDYw#%7B%22pageId%22%3A%22gxAINaLU5uSzyIaGaOXu%22%7D
+
 ## Architecture
 
 ```mermaid
@@ -34,6 +38,7 @@ flowchart TD
 signal as a **pure function of accumulated state** on each flush. This kills a
 whole class of double-counting bugs and makes the scenarios below trivially
 testable (feed state, assert the winner).
+
 
 ### Components
 
